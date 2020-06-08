@@ -1,0 +1,29 @@
+COMANDOS NODE
+COMANDOS NODE
+- Instalar o node e o npm
+ - Para windows utilizar o chocolatey ( gerenciador de pacotes de instalaçao de coisas )
+ - https://chocolatey.org/ ( Seguir o tutorial de instalaçao que está no site )
+ - Abrir o power shell como adm
+ - com o chocolatey instalado, usar o comando choco install (cinstal) node.js-lts ( lts é a versao mais estavel do node )
+ - node -v mostra versao instalada
+ - npm - v para ver a versao do npm ( npm ja vem com o node )
+ - NPM ( é o gereciador de dependecias, toda vez q precisar de alguma coisa de 3° tipo framework, biblioteca e afins )
+ 
+- Iniciar o node:
+	- Acessar a pasta do projeto pelo terminal EX: PS C:\Users\JHONATA VERONESE\Documents\Estudos> cd .\backend\
+	- Executar o comando node index.js (index é o arquivo principal que vai ser executado do node)
+	- Para acessar rodar no navegador (Localhost:3333/METODO Q TEM DENTRO DO INDEX)
+	- O insominia é igual ao postman pra testar requisiçoes rest
+	- Instalar o nodemon para o servidor fica reiniciando sozinho.
+	- npm install nodemon ( instala o coiso ali)
+	
+- CONFIGURANDO BANCO DE DADOS ( SQLITE com KNEX para os query builder)
+	- http://knexjs.org/ - Documentaçao e comandos para utilização no site..
+	- configurar o arquivo knexfile.js, nele vai ter toda a configuraçao de onde fica o banco, migrations, e atributos do mesmo. para cada passo abaixo é necessário ajustar este arquivo
+	- npm install knex ( instala o knex no projeto )
+	- npm install sqlite3 ( instala o banco de dados no caso o sqlite, pode ser por exemplo o postgres usando dai no lugar do sqlite3 o pg)
+	- npx knex migrate:make create_ongs  ( cria as migraçoes das entidades, que estao sendo adicionadas, para que seja atualizado caso o projeto seja passado para outro ( tipo um tools ) )
+	- criando tabela knex.schema.createTable('nomeTabela')
+	- Nos arquivos de migrations, gerados do codigo acima, fica a criaçao da tabela, e a remoçao da mesma, para caso de algum problema ( tipo o q o tools faz )
+	- npx knex migrate:latest ( Executar o comando de migraçao )
+	
